@@ -7,8 +7,7 @@
   <Description>
     filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. It allows the creation of multiple users and each user can have its own directory. It can be used as a standalone app or as a middleware.[br][br]
     [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
-    [b]/config[/b] This is where FileBrowser will store it's configuration files and logs.[br]
-  [b]/media[/b] This is the volume mapping that you want to do file management on using FileBrowser.
+  [b]/srv[/b] This is the volume mapping that you want to do file management on using FileBrowser.
   </Description>
   <Overview>
     Filebrowser provides a file managing interface within a specified directory and it can be used to upload, delete, preview, rename and edit your files. It allows the creation of multiple users and each user can have its own directory. It can be used as a standalone app or as a middleware.
@@ -53,18 +52,13 @@
   </Environment>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/filebrowser/config.json</HostDir>
-      <ContainerDir>/config.json</ContainerDir>
+      <HostDir>/mnt/user</HostDir>
+      <ContainerDir>/srv/user</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
-      <HostDir>/mnt/user/appdata/filebrowser/database.db</HostDir>
-      <ContainerDir>/database.db</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt</HostDir>
-      <ContainerDir>/srv</ContainerDir>
+      <HostDir>/boot</HostDir>
+      <ContainerDir>/srv/boot</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
